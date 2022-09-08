@@ -5,9 +5,9 @@ import {Router} from "@angular/router";
 
 
 @Component({
-  selector: 'app-userForm',
-  templateUrl: './userForm.component.html',
-  styleUrls: ['./userForm.component.scss']
+  selector: 'app-user-form',
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent {
 

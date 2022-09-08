@@ -1,5 +1,6 @@
 <section class="container">
   <p class="tittle"> BMI Update Form </p>
+
   <p class="alert" *ngIf="alert" role="alert">
     <Strong>Success!</Strong> your data was successfully updated!
     <button class="button" (click)="closeAlert()" type="button" class="close">Close</button>
@@ -40,8 +41,11 @@
                placeholder="Weight">
       </mat-form-field>
     </p>
-    <p>
-      <button mat-raised-button type="submit" class="button">Update</button>
-    </p>
+    <div *ngIf="!disablePatch">
+      <button disabled="false" mat-raised-button type="submit" class="button">Update</button>
+    </div>
+    <div *ngIf="disablePatch">
+      <button disabled="true" mat-raised-button type="submit" class="button">Update</button>
+    </div>
   </form>
 </section>

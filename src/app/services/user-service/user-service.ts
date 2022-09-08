@@ -16,7 +16,6 @@ export class UserService {
   private idUrl = this.host + '/user/get'
 
   private userList: any[] = [];
-  private id: any;
 
   constructor(private httpClient: HttpClient) {
     this.userList = [];
@@ -39,7 +38,7 @@ export class UserService {
     return this.httpClient.delete<UserService>(`${this.deleteUrl}/${id}`);
   }
 
-  currentData(id: string) {
+  getUser(id: string) {
     return this.httpClient.get<UserService>(`${this.idUrl}/${id}`);
   }
 

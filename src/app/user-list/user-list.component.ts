@@ -2,14 +2,14 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from "../services/user-service/user-service";
 
 @Component({
-  selector: 'app-userList',
-  templateUrl: './userList.component.html',
-  styleUrls: ['./userList.component.scss']
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
   // @ts-ignore
   userList: any[];
-  displayedColumns = ['id', 'firstName', 'lastName', 'height', 'weight', 'imc', 'healthStatus', 'update', 'delete'];
+  displayedColumns = ['id', 'firstName', 'lastName', 'height', 'weight', 'imc', 'healthStatus', 'date', 'update', 'delete'];
 
   constructor(private service: UserService) {
   }

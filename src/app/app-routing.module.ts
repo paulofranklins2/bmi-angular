@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {UserListComponent} from "./userList/userList.component";
-import {UserFormComponent} from "./userForm/userForm.component";
-import {PatchFormComponent} from "./patchForm/patch-form.component";
-import {UserDeleteComponent} from "./userDelete/user-delete.component";
-import {UserFindComponent} from "./userFinder/user-find.component";
-import {SingleUserComponent} from "./userSingle/single-user.component";
+import {UserListComponent} from "./user-list/user-list.component";
+import {UserFormComponent} from "./user-form/user-form.component";
+import {PatchFormComponent} from "./patch-form/patch-form.component";
+import {UserDeleteComponent} from "./user-delete/user-delete.component";
+import {UserFindComponent} from "./user-finder/user-find.component";
+import {SingleUserComponent} from "./user-single/single-user.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'userList', pathMatch: 'full'},

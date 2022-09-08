@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {UserPatchModels} from "../models/userPatch.models";
 
 @Component({
-  selector: 'app-patchForm',
+  selector: 'app-patch-form',
   templateUrl: './patch-form.component.html',
   styleUrls: ['./patch-form.component.scss']
 })
@@ -15,23 +15,25 @@ export class PatchFormComponent implements OnInit {
   height: any;
   weight: any;
   alert: any;
+  // @ts-ignore
+  user: any[];
+  disablePatch: boolean = false;
 
   constructor(private service: UserService, private route: Router, private activeRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.service.currentData(this.activeRoute.snapshot.params['id']).subscribe((result) => {
-    this.id = this.activeRoute.snapshot.params['id']
-      console.log(result)
+    this.getUser(this.activeRoute.snapshot.params['id'])
+  }
 
-      // @ts-ignore
-      // this.editUser = new FormControl({
-      //   id: new FormControl(this.activeRoute.snapshot.params['id']),
-      //   firstName: new FormControl(result),
-      //   lastName: new FormControl(result),
-      //   height: new FormControl(result),
-      //   weight: new FormControl(result)
-      // })
+  getUser(id: any) {
+    this.service.getUser(id).subscribe(({data}: any) => {
+      const {user} = data;
+      this.id = user.id;
+      this.firstName = user.firstName;
+      this.lastName = user.lastName;
+      this.height = user.height;
+      this.weight = user.weight
     })
   }
 
@@ -44,17 +46,14 @@ export class PatchFormComponent implements OnInit {
       weight: this.weight,
     };
     this.service.patchUser(submittedPatchForm).subscribe(value => {
-        this.route.navigateByUrl('patchUser')
-      this.alert = true;
+        this.alert = true;
+        this.disablePatch = true;
       },
       error => console.log(error))
   }
 
-  patch(){
-
-  }
-
   closeAlert() {
     this.alert = false;
+    this.route.navigateByUrl('userList')
   }
 }

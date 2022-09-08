@@ -1,0 +1,71 @@
+<section class="container">
+  <p class="tittle"> User Information </p>
+  <form (ngSubmit)="singleUser()" class="form">
+
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="firstName">ID</mat-label>
+        <input disabled="true" matInput type="text" class="form-control" id="id" [(ngModel)]="firstName" name="id"
+               placeholder="First Name">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="firstName">First Name</mat-label>
+        <input disabled="true" matInput type="text" class="form-control" id="firstName" [(ngModel)]="firstName"
+               name="first name"
+               placeholder="First Name">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="lastName">Last Name</mat-label>
+        <input disabled="true" matInput type="text" class="form-control" id="lastName" [(ngModel)]="lastName"
+               name="last name"
+               placeholder="Last Name">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">Height</mat-label>
+        <input disabled="true" matInput type="number" class="form-control" id="height" [(ngModel)]="height"
+               name="height"
+               placeholder="Height">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">Weight</mat-label>
+        <input disabled="true" matInput type="number" class="form-control" id="weight" [(ngModel)]="weight"
+               name="weight"
+               placeholder="Weight">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">IMC</mat-label>
+        <input disabled="true" matInput type="number" class="form-control" id="imc" [(ngModel)]="weight" name="imc"
+               placeholder="Weight">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">Health Status</mat-label>
+        <input disabled="true" matInput type="number" class="form-control" id="healthStatus" [(ngModel)]="weight"
+               name="healthStatus"
+               placeholder="Weight">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">Date</mat-label>
+        <input disabled="true" matInput type="number" class="form-control" id="date" [(ngModel)]="weight" name="date"
+               placeholder="Date">
+      </mat-form-field>
+    </p>
+
+    <p style="padding-bottom: 2%">
+    </p>
+  </form>
+</section>

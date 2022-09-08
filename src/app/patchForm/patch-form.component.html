@@ -1,0 +1,47 @@
+<section class="container">
+  <p class="tittle"> BMI Update Form </p>
+  <p class="alert" *ngIf="alert" role="alert">
+    <Strong>Success!</Strong> your data was successfully updated!
+    <button class="button" (click)="closeAlert()" type="button" class="close">Close</button>
+  </p>
+  <form (ngSubmit)="patchForm()" class="form">
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="id">ID</mat-label>
+        <input disabled="true" matInput type="text" class="form-control" id="id" [(ngModel)]="id" name="id"
+               placeholder="ID">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="firstName">First Name</mat-label>
+        <input matInput type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="first name"
+               placeholder="First Name">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="lastName">Last Name</mat-label>
+        <input matInput type="text" class="form-control" id="lastName" [(ngModel)]="lastName" name="last name"
+               placeholder="Last Name">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">Height</mat-label>
+        <input matInput type="number" class="form-control" id="height" [(ngModel)]="height" name="height"
+               placeholder="Height">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="height">Weight</mat-label>
+        <input matInput type="number" class="form-control" id="weight" [(ngModel)]="weight" name="weight"
+               placeholder="Weight">
+      </mat-form-field>
+    </p>
+    <p>
+      <button mat-raised-button type="submit" class="button">Update</button>
+    </p>
+  </form>
+</section>

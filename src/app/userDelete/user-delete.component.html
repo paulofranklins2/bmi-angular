@@ -1,0 +1,26 @@
+<section class="container">
+  <p class="tittle"> BMI Delete User </p>
+  <p class="alert" *ngIf="alert" role="alert">
+    <Strong>Success!</Strong> your data was successfully updated!
+    <button class="button" (click)="closeAlert()" type="button" class="close">Close</button>
+  </p>
+  <form (ngSubmit)="deleteUser(id)" class="form">
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="id">ID</mat-label>
+        <input disabled="true" matInput type="text" class="form-control" id="id" [(ngModel)]="id" name="id"
+               placeholder="ID">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" class="inputField">
+        <mat-label for="firstName">First Name</mat-label>
+        <input disabled="true" matInput type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="first name"
+               placeholder="First Name">
+      </mat-form-field>
+    </p>
+    <p>
+      <button mat-raised-button type="submit" class="button">Delete</button>
+    </p>
+  </form>
+</section>

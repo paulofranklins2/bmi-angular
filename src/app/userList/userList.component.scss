@@ -1,0 +1,32 @@
+.container {
+  background-color: beige;
+  margin-bottom: 2%;
+}
+
+.table {
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: beige;
+  padding-bottom: 5%;
+
+}
+
+.thName {
+  text-align: center;
+}
+
+.mat-row:hover {
+  font-size: 16px;
+  -webkit-box-shadow: 0 0 10px rgb(0,0,0);
+  -moz-box-shadow: 0 0 10px rgb(0,0,0);
+  background-color: rgb(245, 237, 208);
+  transition-duration: 0.4s;
+}
+
+.noUser{
+  font-size: 20px;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  text-align: center;
+}

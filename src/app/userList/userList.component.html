@@ -1,0 +1,75 @@
+<section class="container" tabindex="0">
+  <p class="tittle">User List</p>
+
+  <table mat-table [dataSource]="userList" class="table" *ngIf="userList?.length; else emptyInputs">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef class="thName"> ID</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef class="thName"> First Name</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef class="thName"> Name</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="height">
+      <th mat-header-cell *matHeaderCellDef class="thName"> Height</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.height}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef class="thName"> Weight</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.weight}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="imc">
+      <th mat-header-cell *matHeaderCellDef class="thName"> IMC</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.imc}} </td>
+    </ng-container>
+
+    <!--    <ng-container matColumnDef="healthStatus">-->
+    <!--      <th mat-header-cell *matHeaderCellDef class="thName"> Health Status</th>-->
+    <!--      <td mat-cell *matCellDef="let element" class="thName"> {{element.healthStatus === }} </td>-->
+    <!--    </ng-container>-->
+
+    <ng-container matColumnDef="healthStatus" [ngSwitch]="testHealthStatus">
+      <th mat-header-cell *matHeaderCellDef class="thName"> Health Status</th>
+      <td mat-cell *matCellDef="let element" class="thName"> {{element.healthStatus}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef class="thName"> Update</th>
+      <td mat-cell *matCellDef="let element" class="thName">
+        <a class="button" mat-button routerLink="/patchForm/{{element.id}}">Update</a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="thName"> Delete</th>
+      <td mat-cell *matCellDef="let element" class="thName">
+        <button class="button" mat-button routerLink="/deleteUser/{{element.id}}">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</section>
+
+<section>
+  <ng-template #emptyInputs>
+    <div class="noUser">
+      <p>No user has used the IMC calculator yet, why not be the first one?
+      </p>
+      <p style="padding-top: 1%">
+        <button mat-button routerLink="userForm" class="button" style="font-size: 25px;">UserForm</button>
+      </p>
+    </div>
+  </ng-template>
+</section>

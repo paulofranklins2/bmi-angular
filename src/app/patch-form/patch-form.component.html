@@ -3,7 +3,11 @@
 
   <p class="alert" *ngIf="alert" role="alert">
     <Strong>Success!</Strong> your data was successfully updated!
-    <button class="button" (click)="closeAlert()" type="button" class="close">Close</button>
+    <button mat-raised-button
+            class="button"
+            (click)="closeAlert()"
+            routerLink="/userList">Back
+    </button>
   </p>
   <form (ngSubmit)="patchForm()" class="form">
     <p>
@@ -42,10 +46,18 @@
       </mat-form-field>
     </p>
     <div *ngIf="!disablePatch">
-      <button disabled="false" mat-raised-button type="submit" class="button">Update</button>
+      <button mat-raised-button
+              class="button"
+              disabled="false"
+              type="submit">Update
+      </button>
     </div>
     <div *ngIf="disablePatch">
-      <button disabled="true" mat-raised-button type="submit" class="button">Update</button>
+      <button mat-raised-button
+              class="button"
+              disabled="true"
+              type="submit">Update
+      </button>
     </div>
   </form>
 </section>

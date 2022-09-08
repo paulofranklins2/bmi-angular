@@ -4,14 +4,15 @@
 
     <p>
       <mat-form-field appearance="legacy" class="inputField">
-        <mat-label for="firstName">ID</mat-label>
+        <mat-label for="id">ID</mat-label>
         <input matInput
                disabled="true"
                type="text"
                class="form-control"
-               id="id" [(ngModel)]="firstName"
+               id="id"
+               [(ngModel)]="id"
                name="id"
-               placeholder="First Name">
+               placeholder="ID">
       </mat-form-field>
     </p>
 
@@ -108,6 +109,9 @@
                name="date"
                placeholder="Data">
       </mat-form-field>
+    </p>
+    <p>
+      <button mat-raised-button class="button" routerLink="/userList">Back</button>
     </p>
     <p style="padding-bottom: 2%">
     </p>

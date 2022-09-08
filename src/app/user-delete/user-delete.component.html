@@ -1,12 +1,13 @@
 <section class="container">
   <p class="tittle"> BMI Delete User </p>
-  <div class="alert" *ngIf="alert">
-    <Strong>Success!</Strong> your data was successfully deleted!
-    <div>
-      <button (click)="closeAlert()" type="button" class="button">Close</button>
-    </div>
-  </div>
-
+  <p class="alert" *ngIf="alert" role="alert">
+    <Strong>Success!</Strong> your data was successfully updated!
+    <button mat-raised-button
+            class="button"
+            (click)="closeAlert()"
+            routerLink="/userList">Back
+    </button>
+  </p>
   <form (ngSubmit)="deleteUser(id)" class="form">
     <div>
       <mat-form-field appearance="legacy" class="inputField">

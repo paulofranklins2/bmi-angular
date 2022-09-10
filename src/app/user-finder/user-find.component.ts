@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {UserService} from "../services/user-service/user-service";
 
 @Component({
   selector: 'app-user-finder',
@@ -7,10 +8,22 @@ import {Component, OnInit} from '@angular/core';
 })
 export class UserFindComponent implements OnInit {
   id: any;
-  constructor() {
+  alert: boolean = false;
+
+  constructor(private service: UserService) {
   }
 
   ngOnInit(): void {
   }
 
+  userFinder(id: any) {
+
+  }
+
+  getUser(id: any) {
+    this.service.getUser(id).subscribe(({data}: any) => {
+      const {user} = data;
+      this.alert = true;
+    })
+  }
 }

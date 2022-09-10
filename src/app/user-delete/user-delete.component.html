@@ -1,35 +1,62 @@
 <section class="container">
   <p class="tittle"> BMI Delete User </p>
-  <p class="alert" *ngIf="alert" role="alert">
+
+  <p class="alert"
+     role="alert"
+     *ngIf="alert">
     <Strong>Success!</Strong> your data was successfully updated!
+
     <button mat-raised-button
             class="button"
             (click)="closeAlert()"
             routerLink="/userList">Back
     </button>
+
   </p>
-  <form (ngSubmit)="deleteUser(id)" class="form">
+  <form class="form"
+        (ngSubmit)="deleteUser(id)">
     <div>
-      <mat-form-field appearance="legacy" class="inputField">
+      <mat-form-field class="inputField"
+                      appearance="legacy">
         <mat-label for="id">ID</mat-label>
-        <input disabled="true" matInput type="text" class="form-control" id="id" [(ngModel)]="id" name="id"
+        <input matInput
+               class="form-control"
+               disabled="true"
+               type="text"
+               id="id"
+               [(ngModel)]="id"
+               name="id"
                placeholder="ID">
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="legacy" class="inputField">
+      <mat-form-field class="inputField"
+                      appearance="legacy">
         <mat-label for="firstName">First Name</mat-label>
-        <input disabled="true" matInput type="text" class="form-control" id="firstName" [(ngModel)]="firstName"
-               name="first name"
+        <input matInput
+               disabled="true"
+               type="text"
+               class="form-control"
+               id="firstName"
+               [(ngModel)]="firstName"
+               name="firstName"
                placeholder="First Name">
       </mat-form-field>
     </div>
 
     <div *ngIf="!disableDelete">
-      <button disabled="false" mat-raised-button type="submit" class="button">Delete</button>
+      <button mat-raised-button
+              class="button"
+              disabled="false"
+              type="submit">Delete
+      </button>
     </div>
     <div *ngIf="disableDelete">
-      <button disabled="true" mat-raised-button type="submit" class="button">Delete</button>
+      <button mat-raised-button
+              class="button"
+              disabled="true"
+              type="submit">Delete
+      </button>
     </div>
 
   </form>
